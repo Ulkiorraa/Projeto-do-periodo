@@ -1,4 +1,7 @@
 **.vscode
 **bin
 **lib
+**idea
+**out
+Projeto do periodo.iml
 db.properties

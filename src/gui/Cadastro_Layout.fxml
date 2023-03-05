@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroPessoaController">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="319.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroPessoaController">
+   <content>
+      <VBox prefHeight="411.0" prefWidth="506.0">
          <children>
-            <Label layoutX="23.0" layoutY="30.0" text="Nome">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="nome_txt" layoutX="67.0" layoutY="26.0" prefHeight="25.0" prefWidth="511.0" />
-            <Label layoutX="30.0" layoutY="69.0" text="CPF">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="cpf_txt" layoutX="67.0" layoutY="65.0" prefHeight="25.0" prefWidth="179.0" promptText="000.000.000-00" />
-            <Label layoutX="272.0" layoutY="69.0" text="Data de nascimento">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="nasc_txt" layoutX="399.0" layoutY="65.0" prefHeight="25.0" prefWidth="179.0" promptText="dd/mm/aaaa" />
-            <Label layoutX="27.0" layoutY="116.0" text="Sexo">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <RadioButton fx:id="sexoM" layoutX="105.0" layoutY="116.0" mnemonicParsing="false" text="Masculino" />
-            <RadioButton fx:id="sexoF" layoutX="246.0" layoutY="116.0" mnemonicParsing="false" text="Feminino" />
-            <RadioButton fx:id="SexoO" layoutX="399.0" layoutY="116.0" mnemonicParsing="false" text="Outro" />
-            <ComboBox fx:id="estado_civil" layoutX="82.0" layoutY="163.0" prefHeight="25.0" prefWidth="164.0" promptText="Secione" visibleRowCount="5" />
-            <Label layoutX="8.0" layoutY="167.0" text="Estado Civil">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="332.0" layoutY="167.0" text="profissão">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="prof_txt" layoutX="399.0" layoutY="163.0" prefHeight="25.0" prefWidth="179.0" />
-            <Button fx:id="bot_cadas" layoutX="232.0" layoutY="256.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="133.0" text="Cadastrar" />
+            <AnchorPane prefHeight="412.0" prefWidth="598.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="23.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nome_txt" layoutX="57.0" layoutY="19.0" prefHeight="26.0" prefWidth="441.0" />
+                  <Label layoutX="14.0" layoutY="69.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cpf_txt" layoutX="57.0" layoutY="64.0" prefHeight="26.0" prefWidth="112.0" promptText="000.000.000-00" />
+                  <Label layoutX="283.0" layoutY="69.0" text="Data de nascimento">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nasc_txt" layoutX="408.0" layoutY="64.0" prefHeight="26.0" prefWidth="91.0" promptText="dd/mm/aaaa" />
+                  <Label layoutX="14.0" layoutY="139.0" text="Sexo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="sexoM" layoutX="70.0" layoutY="139.0" mnemonicParsing="false" text="Masculino" />
+                  <RadioButton fx:id="sexoF" layoutX="209.0" layoutY="139.0" mnemonicParsing="false" text="Feminino" />
+                  <RadioButton fx:id="SexoO" layoutX="364.0" layoutY="139.0" mnemonicParsing="false" text="Outro" />
+                  <Label layoutX="17.0" layoutY="188.0" text="Estado Civil">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="estado_civil" layoutX="94.0" layoutY="184.0" prefHeight="26.0" prefWidth="137.0" promptText="Selecione" />
+                  <Label layoutX="287.0" layoutY="188.0" text="Profissão">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prof_txt" layoutX="350.0" layoutY="184.0" />
+                  <Button fx:id="bot_cadas" layoutX="198.0" layoutY="303.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="110.0" text="Cadastrar" />
+               </children>
+            </AnchorPane>
          </children>
-    </AnchorPane>
-  </children>
-</VBox>
+      </VBox>
+   </content>
+</ScrollPane>
