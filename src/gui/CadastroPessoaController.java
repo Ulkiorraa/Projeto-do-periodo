@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import gui.util.Alerts;
+import gui.util.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -135,6 +135,7 @@ public class CadastroPessoaController {
         String sexo;
         String profissao = prof_txt.getText().trim();
 
+
         // Obtenção do estado civil selecionado
         String estadoCivil = estado_civil.getSelectionModel().getSelectedItem();
 
@@ -178,27 +179,35 @@ public class CadastroPessoaController {
             return;
         }
 
+         // Validação do CPF
+         ValidarCPF validarCPF = new ValidarCPF();
+         if (!validarCPF.validarCPF(cpf)) {
+             alerts.mostrarMensagemDeErro("CPF inválido.");
+             return;
+         }
+
         // Cálculo da idade
         int idade = Period.between(dataNasc, LocalDate.now()).getYears();
 
         // Validação da profissão
         if (profissao.isEmpty()) {
             profissao = "Desempregado(a)";
-        } else if (profissao.equalsIgnoreCase("Engenheiro") || profissao.equalsIgnoreCase("Analista de sistemas")) {
+        } else if (profissao.toLowerCase().equalsIgnoreCase("engenheiro") || profissao.toLowerCase().equalsIgnoreCase("analista de sistemas")) {
             alerts.mostrarMensagem("Há vagas disponíveis para " + profissao + ".");
         }
 
         // Exibição dos dados da pessoa
         alerts.mostrarMensagem(
-                "Nome: " + nome +
-                "\nIdade: " + idade + " anos" +
-                "\nSexo: " + sexo +
-                "\nEstado civil: " + estadoCivil +
-                "\nProfissão: " + profissao 
-        );
+                        "Nome: " + nome +
+                        "\nIdade: " + idade + " anos" +
+                        "\nSexo: " + sexo +
+                        "\nEstado civil: " + estadoCivil +
+                        "\nProfissão: " + profissao);
     }
 
     /*
+        Forma Alternativa de mascarar campo atraavez de função externa, nescessario vincular KeyReleased ao FXML.
+
      * @FXML
      * private void cpfKeyReleased() {
      * TextFieldFormatter tff = new TextFieldFormatter();
