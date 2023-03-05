@@ -56,13 +56,13 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="cpf_txt" layoutX="67.0" layoutY="65.0" onKeyReleased="#cpfKeyReleased" prefHeight="25.0" prefWidth="179.0" promptText="000.000.000-00" />
+            <TextField fx:id="cpf_txt" layoutX="67.0" layoutY="65.0" prefHeight="25.0" prefWidth="179.0" promptText="000.000.000-00" />
             <Label layoutX="272.0" layoutY="69.0" text="Data de nascimento">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="nasc_txt" layoutX="399.0" layoutY="65.0" onKeyReleased="#nascKeyReleased" prefHeight="25.0" prefWidth="179.0" promptText="dd/mm/aaaa" />
+            <TextField fx:id="nasc_txt" layoutX="399.0" layoutY="65.0"  prefHeight="25.0" prefWidth="179.0" promptText="dd/mm/aaaa" />
             <Label layoutX="27.0" layoutY="116.0" text="Sexo">
                <font>
                   <Font name="System Bold" size="12.0" />
