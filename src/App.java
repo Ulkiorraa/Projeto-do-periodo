@@ -24,6 +24,7 @@ public class App extends Application {
             Parent parent = FXMLLoader.load(this.getClass().getResource("gui/Cadastro_Layout.fxml"));
             Scene scene = new Scene(parent);
             stage.setScene(scene);
+            stage.setTitle("Cadastro de Pessoas");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
