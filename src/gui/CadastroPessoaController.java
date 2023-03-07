@@ -44,8 +44,6 @@ public class CadastroPessoaController {
     @FXML
     private RadioButton sexoM;
 
-    private ToggleGroup sexoToggleGroup;
-
     public void initialize() {
         // Define a máscara do CPF
         TextFormatter<String> cpfFormatter = new TextFormatter<>(change -> {
@@ -71,7 +69,7 @@ public class CadastroPessoaController {
                 return change;
             }
             String newText = change.getControlNewText();
-            if (newText.matches("\\d{0,2}\\/?\\d{0,2}\\/?\\d{0,4}")) {
+            if (newText.matches("\\d{0,2}/?\\d{0,2}/?\\d{0,4}")) {
                 if (newText.length() == 3 || newText.length() == 6) {
                     change.setText("/");
                 }
@@ -108,7 +106,7 @@ public class CadastroPessoaController {
         prof_txt.setTextFormatter(noNumbersFormatter2);
 
         // Define o ToggleGroup para os RadioButtons de sexo
-        sexoToggleGroup = new ToggleGroup();
+        ToggleGroup sexoToggleGroup = new ToggleGroup();
         sexoM.setToggleGroup(sexoToggleGroup);
         sexoF.setToggleGroup(sexoToggleGroup);
         SexoO.setToggleGroup(sexoToggleGroup);
@@ -192,7 +190,7 @@ public class CadastroPessoaController {
         // Validação da profissão
         if (profissao.isEmpty()) {
             profissao = "Desempregado(a)";
-        } else if (profissao.toLowerCase().equalsIgnoreCase("engenheiro") || profissao.toLowerCase().equalsIgnoreCase("analista de sistemas")) {
+        } else if (profissao.equalsIgnoreCase("engenheiro") || profissao.equalsIgnoreCase("analista de sistemas")) {
             alerts.mostrarMensagem("Há vagas disponíveis para " + profissao + ".");
         }
 
